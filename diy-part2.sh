@@ -11,6 +11,9 @@
 # Modify default IP
 sed -i 's/192.168.6.1/192.168.233.1/g' package/base-files/files/bin/config_generate
 
+# 已移除 OpenClash（改用 PassWall2），以下 OpenClash 备份优化脚本已注释。
+# 若以后重新启用 OpenClash，取消下面整段注释即可。
+: <<'DISABLED_OPENCLASH_BLOCK'
 # Limit OpenClash sysupgrade backups to persistent user data. Downloadable
 # runtime assets such as the core and GeoIP/GeoSite databases can otherwise
 # make the backup too large to restore safely on devices with small flash.
@@ -39,6 +42,7 @@ if old not in text:
 
 path.write_text(text.replace(old, new, 1))
 PYTHON
+DISABLED_OPENCLASH_BLOCK
 
 # Modify hostname
 #sed -i 's/OpenWrt/360T7/g' package/base-files/files/bin/config_generate

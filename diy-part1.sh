@@ -19,4 +19,11 @@
 
 #sed -i '$a src-git helloworld https://github.com/P3TERX/helloworld' feeds.conf.default
 
-echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+# 已移除 nikki feed（改用 PassWall2 作为唯一代理框架）
+# echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+
+# --- 用户自定义插件源 ---
+# PassWall2（替换 PassWall）
+echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main" >> "feeds.conf.default"
+# EasyTier 异地组网 LuCI
+echo "src-git easytier https://github.com/EasyTier/luci-app-easytier.git;main" >> "feeds.conf.default"
