@@ -10,6 +10,10 @@
 
 name: Build OpenWrt
 
+# 修复 fork 仓库 GITHUB_TOKEN 默认只读导致发 Release 403 的问题
+permissions:
+  contents: write
+
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
   #REPO_URL: https://github.com/sagehou/immortalwrt-mt798x-6.6
